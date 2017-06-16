@@ -64,18 +64,28 @@
 		$verify_token = $_REQUEST['hub_verify_token'];
 		
 		// Senha Default para configurar no Webhook no Developers
-		$senha = 'minhasenha123';
+		$token_access = 'SENHA PARA VERIFICAÇAO NO WEBHOOKS';
 
 		// VERIFICACAO DE ACESSO A PARTIR DA SENHA
-		if ($verify_token === $senha) {
+		if ($verify_token === $token_access) {
     		echo $challenge;
 		}
 
 		// RECEBE AS INFOS
 		$receive = json_decode(file_get_contents('php://input'), true);
 
+		// SALVA LOGS
+		if(!empty($receive) && count($receive) > 0): 
+
+			$buffer = file_get_contents('./logger/logs.json');
+			array_push($buffer, $receive);
+			file_put_contents("./logger/logs.json", json_encode($buffer));
+
+		endif;
+
 		// INICIA O TRATAMENTO DE MENSAGEM POR MENSAGEM
-		foreach ($receive['entry'] as $key => $entry) {
+		if(isset($receive["entry"])){
+			foreach ($receive['entry'] as $key => $entry) {
 				
 				$pageID = $entry["id"];
 				$timeOfEvent = $entry["time"];
@@ -91,3 +101,4 @@
 				}
 
 			}
+		}
