@@ -54,7 +54,7 @@ ___________
  - **Ajude o PROJETO**
  _________
  -  ![Doaçao Por Bitcoin](http://imgur.com/qtrPadk.jpg) Endereço: **37RWdwgsXK94pANXm9fHv722k4zQmtmCpH**
- - Codigo QR:  ![Codigo QR Da Carteira]()
+ - Codigo QR:  ![Codigo QR Da Carteira](https://chart.googleapis.com/chart?chs=240x240&choe=UTF-8&chld=M%7C0&cht=qr&chl=37RWdwgsXK94pANXm9fHv722k4zQmtmCpH)
  _________
  - ![Doaçao paypal](http://i.imgur.com/PJNAV7l.png)
  - [Ajudar pelo Paypal](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PBUWHQ3WASDAA)
