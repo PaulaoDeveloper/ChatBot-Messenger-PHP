@@ -69,6 +69,6 @@ ___________
 
 --------------------------
 
-<p align="center"><img src="http://i.imgur.com/PJNAV7l.png" width="90"/> [Ajudar pelo Paypal](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PBUWHQ3WASDAA) </p> 
+<p align="center"><img src="http://i.imgur.com/PJNAV7l.png" width="90" /> https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PBUWHQ3WASDAA </p> 
 
 --------------------------
