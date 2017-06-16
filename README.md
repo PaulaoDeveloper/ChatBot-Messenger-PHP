@@ -61,10 +61,11 @@ Abra o chat da pagina e envie /comandos
  
 ___________
 
-<img src="http://imgur.com/qtrPadk.jpg" width="90" /> **37RWdwgsXK94pANXm9fHv722k4zQmtmCpH** |
------------- | -------------
-<p align="center"><img src="https://chart.googleapis.com/chart?chs=240x240&choe=UTF-8&chld=M%7C0&cht=qr&chl=37RWdwgsXK94pANXm9fHv722k4zQmtmCpH" width="200"/></p> | 
------------- | -------------
+<p align="center"><img src="http://imgur.com/qtrPadk.jpg" width="90" /> 37RWdwgsXK94pANXm9fHv722k4zQmtmCpH  </p> 
+
+--------------------------
+<p align="center"><img src="https://chart.googleapis.com/chart?chs=240x240&choe=UTF-8&chld=M%7C0&cht=qr&chl=37RWdwgsXK94pANXm9fHv722k4zQmtmCpH" width="200"/></p> 
+--------------------------
 <img src="http://i.imgur.com/PJNAV7l.png" width="90"/> [Ajudar pelo Paypal](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PBUWHQ3WASDAA)| 
------------- | -------------
+--------------------------
 
