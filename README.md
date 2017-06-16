@@ -1,11 +1,13 @@
-ChatBot Atendente Para Paginas!
-===================
+<p align="center"> <img src="https://i.imgur.com/WxWSy8C.gif" alt="FrontEndBR" width="500" height="350"/> </p>
 ----------
-![enter image description here](https://i.imgur.com/WxWSy8C.gif)
-----------
-**Demo:** https://fb.com/capaspersonalizadaass
-
-Abra o chat da pagina e envie /comandos
+<center>
+	<h1>ChatBot Atendente Para Paginas</h1>
+</center>
+---------
+<center>
+    <h5>**Demo:** https://fb.com/capaspersonalizadaass</h5>
+    <p>Abra o chat da pagina e envie /comandos</p>
+</center>
 ----------
 
 Passo 1
