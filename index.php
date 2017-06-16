@@ -1,8 +1,10 @@
 <?php 
 
 	$methods = explode('/', $_GET['url']);
-	$name = end($methods);
-	$page = "views/".$name.".php";
+	define("PATH", dirname(__FILE__).DIRECTORY_SEPARATOR);
+	define("FILE_NAME", strip_tags(addslashes(end($methods))));
+
+	$page = PATH."views/".FILE_NAME.".php";
 
 	$types = array(
 		"json" => "Content-type:application/json",
@@ -15,18 +17,14 @@
 		"mp3"  => "Content-type:audio/mp3"
 	);
 
-	$realType = explode('.', strrev($_GET['url']));
-	$realType = $realType[0];
-	$typeReal = "";
-
-	for ($i=0; $i < strlen($realType); $i++) { 
-		$typeReal = $realType[$i].$typeReal;
-	}
+	$typeReal = pathinfo($_GET['url'], PATHINFO_EXTENSION);;
 
 	if(file_exists($page)): include $page; endif;
 	if(file_exists($_GET['url'])){
 		if(isset($types[$typeReal])){
 			header($types[$typeReal]);
+		}else{
+			http_response_code(404);
 		}
-		include $_GET['url'];
+		include PATH.$_GET['url'];
 	}
