@@ -1,13 +1,16 @@
-<p align="center"> <img src="https://i.imgur.com/WxWSy8C.gif" alt="FrontEndBR" width="500" height="350"/> </p>
+<p align="center"> <img src="https://i.imgur.com/WxWSy8C.gif" alt="ChatBotPHP" width="500" height="350"/> </p>
+
 ----------
-<center>
-	<h1>ChatBot Atendente Para Paginas</h1>
-</center>
----------
-<center>
-    <h5>**Demo:** https://fb.com/capaspersonalizadaass</h5>
-    <p>Abra o chat da pagina e envie /comandos</p>
-</center>
+
+## ChatBot Atendente Para Paginas
+
+----------
+
+
+    [Demo](https://fb.com/capaspersonalizadaass)
+    Abra o chat da pagina e envie /comandos
+    
+
 ----------
 
 Passo 1
