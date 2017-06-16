@@ -1,5 +1,5 @@
 <?php 
-
+	
 	$methods = explode('/', $_GET['url']);
 	define("PATH", dirname(__FILE__).DIRECTORY_SEPARATOR);
 	define("FILE_NAME", strip_tags(addslashes(end($methods))));
@@ -8,7 +8,7 @@
 
 	$types = array(
 		"json" => "Content-type:application/json",
-		"html" => "Content-type:text/plain",
+		"html" => "Content-type:text/html",
 		"js"   => "Content-type:text/javascript",
 		"css"  => "Content-type:text/css",
 		"png"  => "Content-type:image/png",
@@ -19,7 +19,7 @@
 
 	$typeReal = pathinfo($_GET['url'], PATHINFO_EXTENSION);;
 
-	if(file_exists($page)): include $page; endif;
+	if(file_exists($page)): include $page; http_response_code(200); endif;
 	if(file_exists($_GET['url'])){
 		if(isset($types[$typeReal])){
 			header($types[$typeReal]);
@@ -27,4 +27,5 @@
 			http_response_code(404);
 		}
 		include PATH.$_GET['url'];
+		http_response_code(200);
 	}
