@@ -1,5 +1,34 @@
 <?php
+class CallBacksMessages
+{
+	private static $info;
+	private static $data;
 
+	private construct() { }
+	
+	public static function getInstance(array $userInfo)
+	{
+		if (is_null(self::$info)
+		{
+			self::$info = $userInfo;
+			self::$data = Facebook::people(self::$info['user_id']);
+		}
+		
+		return self::$info;
+	}
+
+	public static function callBackName()
+	{
+		return 'Seu nome é: ' . self::$data['nome'];
+	}
+
+	public static function callBackHi()
+	{
+		return 'Olá, tudo bem ' . self::$data['nome'] . ' ?';
+	}
+}
+
+/*
 	function getFacebookPessoa($id){
 
 		$payloadFB = "https://graph.facebook.com/v2.6/{$id}?access_token=".KEY;
@@ -13,37 +42,5 @@
 		return $data;
 
 	}
+*/
 	
-	function callbackName($info){
-
-		$getPessoa = getFacebookPessoa($info["user_id"]);
-		return "Seu Nome é: ".$getPessoa["nome"];
-
-	}
-
-	function callbackOi($info){
-
-		$getPessoa = getFacebookPessoa($name["user_id"]);
-		return "Olá, tudo bem ".$getPessoa["nome"]." ?";
-
-	}
-
-	function callbackBoaNoite($info){
-
-		$pessoa = getFacebookPessoa($info["user_id"]);
-		$n = explode(" ", $pessoa["nome"]);
-		return "Olá ".$n[0].", Boa Noite!!";
-
-	}
-
-	function callbackRoboIgual(){
-
-		return "https://github.com/PaulaoDeveloper/ChatBot-Messenger-PHP";
-
-	}
-
-	function help(){
-
-		return "↪ Meu Nome \n↪ Oi \n↪ Boa Noite \n↪ Fazer um robo igual";
-
-	}
