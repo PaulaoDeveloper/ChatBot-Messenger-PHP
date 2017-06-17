@@ -8,7 +8,7 @@ class CallBacksMessages
 	
 	public static function getInstance(array $userInfo)
 	{
-		if (is_null(self::$info)
+		if (is_null(self::$info))
 		{
 			self::$info = $userInfo;
 			self::$data = Facebook::people(self::$info['user_id']);
