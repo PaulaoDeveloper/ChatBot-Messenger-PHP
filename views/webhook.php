@@ -1,8 +1,9 @@
 <?php
 
-		define('KEY', "EAAQGTdkGPRgBAMOhvQMHZCZA349OpG2fpBRQslZAzYQgQ09LznZAFLJYLIW7HzGCKKF5flTPpe3GohE40BzXBWfwUGfXZChafcZAIXZCoRy5OnUj03ViD6ITJRUmls6090BcTuoe7GCMbAZC11a1qk39DEtuRZAsSed0JAPsGkXBs1QZDZD");
+		define('KEY', "SUA KEY");
 		define('TOKEN_ACCESS', 'minhasenha123');
 		define('ENDPOINT', "http://endpoint-chatbotphp.uphero.com");
+
 		include "views/callbacks.php";
 
   		function MsgPusher($msg){
@@ -106,7 +107,7 @@
 				$infos["message_id"] = $messageID;
 				$infos["user_id"] = $senderID;
 				$infos["page_id"] = $recipientID;
-				$infos["token_access"] = "EAAQGTdkGPRgBAMOhvQMHZCZA349OpG2fpBRQslZAzYQgQ09LznZAFLJYLIW7HzGCKKF5flTPpe3GohE40BzXBWfwUGfXZChafcZAIXZCoRy5OnUj03ViD6ITJRUmls6090BcTuoe7GCMbAZC11a1qk39DEtuRZAsSed0JAPsGkXBs1QZDZD";
+				$infos["token_access"] = "SUA KEY";
 				MsgPusher(json_encode($infos));
 
 				// INICIA O TRATAMENTO PARA ENVIO param1: id, param2: mensagem
