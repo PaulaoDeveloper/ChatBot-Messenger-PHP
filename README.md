@@ -8,7 +8,7 @@
 ----------
 
 ##### Demo https://fb.com/capaspersonalizadaass
-Abra o chat da pagina e envie /comandos    
+Abra o chat da pagina e envie: help   
     
 
 ----------
