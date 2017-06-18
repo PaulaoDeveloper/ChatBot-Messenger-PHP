@@ -87,13 +87,13 @@
 		    $BotCore->setDominio("https://meusite.com");
 		    $BotCore->endpoint("https://meusite.com/endpoint");
     });
-   	```
+   ```
+   
+    
+   ----------
     
     
-    ---------
-    
-    
-	* **Para gerar a KEY:** vá ate **Geração de token** acima de Webhooks em **Pagina** selecione a pagina desejada para o BOT. Ira Abrir uma janela pedindo a permissão da pagina para o acesso do Facebook Developers. Apos Aceitar em **Token de acesso da Página** ira aparecer um Token copie ele e coloque na variavel $key em **/views/webhooks.php**.
+ * **Para gerar a KEY:** vá ate **Geração de token** acima de Webhooks em **Pagina** selecione a pagina desejada para o BOT. Ira Abrir uma janela pedindo a permissão da pagina para o acesso do Facebook Developers. Apos Aceitar em **Token de acesso da Página** ira aparecer um Token copie ele e coloque na variavel $key em **/views/webhooks.php**.
 
 
  7. Configurar Mensagens
