@@ -3,12 +3,20 @@
 
 ----------
 
-## ChatBot Atendente Para Paginas
+## ChatBot Para Messenger Feito Em PHP
 
 ----------
 
-##### Demo https://fb.com/capaspersonalizadaass
-Abra o chat da pagina e envie: help   
+   - Atendente Para Paginas
+   - Facil Configuração
+   - Menor Tempo De Resposta
+   - Integração Com Banco De Dados
+   - Facil manutenção
+
+----------
+
+<center>**Demo:** https://fb.com/capaspersonalizadaass</center>
+<center>**Note:** Abra o chat da pagina e envie **help**</center>
     
 
 ----------
