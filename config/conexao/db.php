@@ -1,9 +1,9 @@
 <?php
 
-	define("HOST", "HOST DO SEU BANCO");
-	define("DB_NAME", "NAME DO SEU BANCO");
-	define("DB_USER", "USER DO SEU BANCO");
-	define("DB_PASS", "SENHA DO SEU BANCO");
+	define("HOST", "mysql873.umbler.com");
+	define("DB_NAME", "neural");
+	define("DB_USER", "chatbotphp");
+	define("DB_PASS", "paulo2017");
 
 	$db = null;
 	try {

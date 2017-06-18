@@ -1,4 +1,7 @@
 <?php
+	
+	namespace Src\Bot;
+	//require_once 'Callback.php';
 
 	class BotCore {
 
@@ -8,6 +11,7 @@
 		private static $logger;
 		private static $endpoint;
 		private static $dominio;
+		private static $callbacks;
 
 		// Pattern Singleton
 
@@ -19,12 +23,16 @@
        	 	return $instance;
 		}
 
+		public function getKey(){ return self::$key; }
+
     	protected function __construct(){}	
 
     	// Configs do ChatBot
 
 		public function setKey($key){ self::$key = $key; }
+
 		public function setToken($token){ self::$token = $token; }
+
 		public function logger($cond){
 			if(!empty(self::$pusher) && count(self::$pusher) == 3 && $cond == true){
 				self::$logger = $cond;
@@ -33,12 +41,17 @@
 				echo "Configure o acesso ao seu Pusher !!";
 			}
 		}
+
 		public function setDominio($dominio){ self::$dominio = $dominio; }
+
+		public function setCallbacks($callback){
+			self::$callbacks = $callback;
+		}
 
 		public static function configPusher(array $config){
 			self::$pusher = $config;
 		}
-
+		
 		public function endpoint($point){
 			self::$endpoint = $point;
 		}
@@ -47,8 +60,7 @@
 		public function MsgPusher($msg){
 			$canal = "chatbotphp";
   			$event = "logger";
-  			$req_url = self::$endpoint."?key=".self::$pusher["key"]."&secret=".self::$pusher["secret"]."&app_id=".self::$pusher["app_id"]."&canal={$canal}&event={$event}&msg={$msg}";
-  			$req_url = self::$dominio.$req_url;
+  			$req_url = self::$endpoint."/".self::$pusher["key"]."/".self::$pusher["secret"]."/".self::$pusher["app_id"]."/".$canal."/".$event."/".$msg;
 			$exec = file_get_contents($req_url);
 		}
 
@@ -58,45 +70,40 @@
 			// Rest do Chatbot
 			$url = 'https://graph.facebook.com/v2.6/me/messages?access_token='.$key;
 			// Iniciando o Envio.
-			$ch = curl_init($url);
-			$data = json_encode($d);
-			curl_setopt($ch, CURLOPT_POST, 1);
-			curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-			curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-    			'Content-Type: application/json'
-			));
-			if (!empty($d['message'])) {
-   				$result = curl_exec($ch);
-			}
+			$client = new \GuzzleHttp\Client(['headers' => [
+				'Content-Type' => 'application/json'
+			]]);
+			file_put_contents('neural/debug.json', json_encode($d));
+			// Envia Requisicao
+			if (!empty($d['message'])){
+  				$client->post($url, array('body' => json_encode($d)));
+  			} 
 		}
 
 		public function eventsTrigger($id, $text, $user){
 			/* MENSAGEM PARA ENVIAR CASO NAO EXISTA NA MEMORIA DO ROBO */
 			$mensagemDefault = 'Digite "help" para ver os Comandos!!';
 			/* SISTEMA DE MEMORIA DO ROBO */
-			$query = self::$dominio.'/neural/neuro-system.json';
-			$neuros = (array) json_decode(file_get_contents($query));
+			$neuros = (array) json_decode(file_get_contents(self::$dominio."/neuros"));
 			/* TRATA A MENSAGEM */
 			$trataNeuro = trim(strtolower($text));
 			/* DADOS A SER ENVIADO PELO BOT */
-			$dataInfo = array(
-				"recipient" => array("id" => $id)
-			);
+			$dataInfo = array("recipient" => array("id" => $id));
 			/* VERIFICA SE EXISTE A MENSAGEM NA MEMORIA DO ROBO */
 			if(isset($neuros[$trataNeuro])){
 				$funcao = $neuros[$trataNeuro];
-				$dataInfo["message"] = array("text" => $funcao($user));
+				$dataInfo["message"] = self::$callbacks->$funcao($user);
 				$this->sendApi($dataInfo);
-			}else{	
+			}else{
 				$keys = explode(" ", $trataNeuro);
 				$search = trim($keys[0]);
 				if(isset($neuros[$search])){
 					$funcao = $neuros[$search];
 					$user["extern_value"] = trim(str_replace($search, "",$trataNeuro));
-					$dataInfo["message"] = array("text" => $funcao($user));
+					$dataInfo["message"] = self::$callbacks->$funcao($user);
 				}
 				if(empty($dataInfo["message"])){
-					$dataInfo["message"] = array("text" => $keys);
+					$dataInfo["message"] = array("text" => $mensagemDefault);
 				}
 				$this->sendApi($dataInfo);		
 			}
@@ -127,15 +134,6 @@
 		}
 
 		public function Run(){
-			// VERIFICAÇAO DO FACEBOOK
-			$challenge = $_REQUEST['hub_challenge'];
-			$verify_token = $_REQUEST['hub_verify_token'];
-			// Senha Default para configurar no Webhook no Developers
-			$token_access = self::$token;
-			// VERIFICACAO DE ACESSO A PARTIR DA SENHA
-			if ($verify_token === $token_access) {
-    			echo $challenge;
-			}
 			// RECEBE AS INFOS
 			$receive = json_decode(file_get_contents('php://input'), true);
 			// INICIA O TRATAMENTO DE MENSAGEM POR MENSAGEM
@@ -144,7 +142,9 @@
 					$pageID = $entry["id"];
 					$timeOfEvent = $entry["time"];
 					foreach($entry["messaging"] as $k => $event){
-						if(isset($event['message'])){ $this->trataMensagem($event); }
+						if(isset($event['message'])){ 
+							$this->trataMensagem($event); 
+						}
 					}
 				}
 			}

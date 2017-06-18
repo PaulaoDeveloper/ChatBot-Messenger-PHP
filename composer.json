@@ -1,10 +1,12 @@
 {
     "require": {
-        "pusher/pusher-php-server": "^2.6"
+        "pusher/pusher-php-server": "^2.6",
+        "guzzlehttp/guzzle": "^6.2",
+        "noahbuscher/macaw": "dev-master"
     },
     "autoload": {
         "psr-4": {
-                "Src\\": "src/"
+            "Src\\" : "src"
         }
     }
 }

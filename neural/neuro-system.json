@@ -1,7 +1,13 @@
 {
-	"name": "Paulao",
-	"oi": "Olá, tudo bem?",
-	"boa noite": "Olá senhor(a) Boa Noite !!",
-	"fazer um robo igual": "https://github.com/PaulaoDeveloper/ChatBot-Messenger-PHP",
-	"/comandos": "↪ Name \n↪ Oi \n↪ Boa Noite \n↪ Fazer um robo igual"
+	"meu nome": "callbackName",
+	"oi": "callbackOi",
+	"boa noite": "callbackBoaNoite",
+	"fazer um robo igual": "callbackRoboIgual",
+	"/clima": "callbackClima",
+	"/youtube": "callbackYoutube",
+	"/procurar": "callbackProcurar",
+	"ver logs": "callbackLogs",
+	"clicou_comecar": "callbackComecar",
+	"continua_conversa": "callbackContinuaConversa",
+	"help": "help"
 }
