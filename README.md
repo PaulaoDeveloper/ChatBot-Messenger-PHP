@@ -15,8 +15,8 @@
 
 ----------
 
-<center>**Demo:** https://fb.com/capaspersonalizadaass</center>
-<center>**Note:** Abra o chat da pagina e envie **help**</center>
+#### **Demo:** https://fb.com/capaspersonalizadaass
+#### **Note:** Abra o chat da pagina e envie **help**
     
 
 ----------
@@ -45,10 +45,15 @@
 
 
 	- Em **URL de retorno de chamada:** coloque o https://seudominio.com/webhooks.
-	- **Senha:** Abra o arquivo **/views/webhooks.php** procure a variavel $token_access no mesmo arquivo e atribua uma senha para verificaçao no webhooks.
-	- Em **Verificar token:** o valor da variavel $token_access definida.
+	- **Senha:** Abra o arquivo **/config/config.php** e atribua uma senha para verificaçao no webhooks.
+	```php
+		define("TOKEN_ACCESS", "sua senha");
+   	```
+	- Em **Verificar token:** o valor definido em TOKEN_ACCESS.
 	- Em **Campos de Assinatura:** selecione **messages, messaging_postbacks, message_deliveries, message_reads**
 	- Apos seguir os passos clique em **Verificar e Salvar**
+	
+	
  6. Configurando Servidor PHP
 
 	Apos a verificaçao ser bem sucedida.
