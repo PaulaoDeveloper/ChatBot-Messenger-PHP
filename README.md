@@ -30,36 +30,36 @@
 	
  2. Aplicativo Criado
 
-	##### Com o Aplicativo já criado  No menu vá em  **Adicionar Produto**
+	* Com o Aplicativo já criado  No menu vá em  **Adicionar Produto**
 	
 
  3. Configurando o Messenger
 
-	##### Clique Encima do Botão Começar na Opção **"Messenger"**
+	* Clique Encima do Botão Começar na Opção **"Messenger"**
 
  4. Configuraçoes
 
-	##### Com o Messenger Adicionado Vá em **Webhooks** E Clique em **Configurar Webhooks**
+	* Com o Messenger Adicionado Vá em **Webhooks** E Clique em **Configurar Webhooks**
 
  5. Configurando WebHooks
 
 
-	- Em **URL de retorno de chamada:** coloque o https://seudominio.com/webhooks.
-	- **Senha:** Abra o arquivo **/config/config.php** e atribua uma senha para verificaçao no webhooks.
+	* Em **URL de retorno de chamada:** coloque o https://seudominio.com/webhooks.
+	* **Senha:** Abra o arquivo **/config/config.php** e atribua uma senha para verificaçao no webhooks.
 	```php
 		define("TOKEN_ACCESS", "sua senha");
    	```
-	- Em **Verificar token:** o valor definido em TOKEN_ACCESS.
-	- Em **Campos de Assinatura:** selecione **messages, messaging_postbacks, message_deliveries, message_reads**
-	- Apos seguir os passos clique em **Verificar e Salvar**
+	* Em **Verificar token:** o valor definido em TOKEN_ACCESS.
+	* Em **Campos de Assinatura:** selecione **messages, messaging_postbacks, message_deliveries, message_reads**
+	* Apos seguir os passos clique em **Verificar e Salvar**
 	
 	
  6. Configurando Servidor PHP
 
 	Apos a verificaçao ser bem sucedida.
 	
-	- **Key:** Abra o arquivo **/views/webhooks.php** procure a variavel $key coloque o token da pagina desejada para o BOT. 
-	- **Para gerar a KEY:** vá ate **Geração de token** acima de Webhooks em **Pagina** selecione a pagina desejada para o BOT. Ira Abrir uma janela pedindo a permissão da pagina para o acesso do Facebook Developers. Apos Aceitar em **Token de acesso da Página** ira aparecer um Token copie ele e coloque na variavel $key em **/views/webhooks.php**.
+	* **Key:** Abra o arquivo **/views/webhooks.php** procure a variavel $key coloque o token da pagina desejada para o BOT. 
+	* **Para gerar a KEY:** vá ate **Geração de token** acima de Webhooks em **Pagina** selecione a pagina desejada para o BOT. Ira Abrir uma janela pedindo a permissão da pagina para o acesso do Facebook Developers. Apos Aceitar em **Token de acesso da Página** ira aparecer um Token copie ele e coloque na variavel $key em **/views/webhooks.php**.
 
 
  7. Configurar Mensagens
