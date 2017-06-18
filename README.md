@@ -104,7 +104,7 @@
 	> **Note:**
 	> - As mensagens são configuradas em JSON.
 
-
+___________
 
  # Ajude o Projeto
  
