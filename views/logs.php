@@ -41,12 +41,12 @@
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript">
 
-		var pusher = new Pusher('444056f9ccb4f4654664', {
+		var pusher = new Pusher('KEY PUSHER', {
       		cluster: 'us2',
       		encrypted: true,
       		pong_timeout: 6000, //default = 30000
    		 	unavailable_timeout: 2000 //default = 10000
-    	});
+    		});
 
     	var channel = pusher.subscribe('chatbotphp');
     	channel.bind('logger', function(data) {
