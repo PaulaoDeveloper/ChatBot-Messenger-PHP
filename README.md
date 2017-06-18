@@ -1,5 +1,5 @@
 
-<p align="center"> <img src="https://i.imgur.com/WxWSy8C.gif" alt="ChatBotPHP" width="500" height="350"/> </p>
+<p align="center"> <img src="http://i.imgur.com/6KXNtkF.png" alt="ChatBotPHP"/> </p>
 
 ----------
 
