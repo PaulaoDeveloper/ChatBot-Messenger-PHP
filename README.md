@@ -46,11 +46,21 @@
 
 	* Em **URL de retorno de chamada:** coloque o https://seudominio.com/webhooks.
 	* **Senha:** Abra o arquivo **index.php** e atribua uma senha para verificaçao no webhooks.
+	      
+    
+    ---------
+    
+    
 	```php
-		Route::get('/webhook', function() {
+	Route::get('/webhook', function() {
       $token_access = "minhasenha123";
     });
    	```
+   	      
+    
+    ---------
+    
+    
 	* Em **Verificar token:** o valor definido em $token_access.
 	* Em **Campos de Assinatura:** selecione **messages, messaging_postbacks, message_deliveries, message_reads**
 	* Apos seguir os passos clique em **Verificar e Salvar**
@@ -68,8 +78,7 @@
     
     
   ```php
-		Route::post("/webhook", function(){
-
+  Route::post("/webhook", function(){
 		    // Cria o Robo
 		    $BotCore = BotCore::getInstance();
 		    // Seta as Configs
@@ -77,7 +86,6 @@
 		    $BotCore->setToken("minhasenha123");
 		    $BotCore->setDominio("https://meusite.com");
 		    $BotCore->endpoint("https://meusite.com/endpoint");
-    
     });
    	```
     
