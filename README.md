@@ -7,6 +7,14 @@
 
 ----------
 
+
+ **Required:** 
+  > - PHP >= 5.4
+  > - Composer. https://getcomposer.org/download/
+  > - Entender o Basico de PHP 
+
+---------
+
    - Atendente Para Paginas
    - Facil Configuração
    - Menor Tempo De Resposta
