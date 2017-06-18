@@ -1,0 +1,10 @@
+{
+    "require": {
+        "pusher/pusher-php-server": "^2.6"
+    },
+    "autoload": {
+        "psr-4": {
+                "Src\\": "src/"
+        }
+    }
+}
