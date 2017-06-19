@@ -12,6 +12,7 @@
   > - PHP >= 5.4
   > - Composer. https://getcomposer.org/download/
   > - Entender o Basico de PHP 
+  > - Hospedagem Usada Para O Projeto https://goo.gl/rRHSWu
 
 ---------
 
@@ -118,7 +119,7 @@ ___________
  
 ___________
 
-<p align="center"><img src="http://imgur.com/qtrPadk.jpg" width="90" /> 37RWdwgsXK94pANXm9fHv722k4zQmtmCpH  </p> 
+  - Carteira Bitcoin: 37RWdwgsXK94pANXm9fHv722k4zQmtmCpH 
 
 --------------------------
 
@@ -126,6 +127,6 @@ ___________
 
 --------------------------
 
-<p align="center"><img src="http://i.imgur.com/PJNAV7l.png" width="90" /> https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PBUWHQ3WASDAA </p> 
+ - Paypal:  https://goo.gl/ujU2QU
 
 --------------------------
