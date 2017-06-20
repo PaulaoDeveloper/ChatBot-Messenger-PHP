@@ -55,12 +55,19 @@
 	}
 
 	public function callbackClima($res){
-
-
-		$resValue = explode(" ", $res["extern_value"]);
-		$clima = (array) json_decode(file_get_contents("http://chatbotphp.ga/rest?cidade={$resValue[0]}&estado={$resValue[1]}"));
-		$fraseClima = "⭕ {$clima["temperatura"]}ºC \n☁ {$clima["descricao"]} \n🕐 {$clima["periodo"]} \n🎈 Umidade: {$clima["humidade"]} \n🌀 {$clima["v_vento"]} \n📅 {$clima["dia"]} \n🕒 {$clima["horario"]}";
-		//.' ºC'
+		
+		$resValue = explode("-", $res["extern_value"]);
+		$cidade = urlencode(trim($resValue[0]));
+		$estado = urlencode(trim($resValue[1]));
+		if(strpos($cidade, '+')){ $cidade = str_replace('+','', $cidade); }
+		if(count($estado) != 1){ $erro = "Erro ao Digitar Sigla Do Estado!"; }
+		$clima = (array) json_decode(file_get_contents("http://chatbotphp.ga/clima/{$cidade}/{$estado}"));
+		if(!empty($clima) && !isset($erro)){
+			$fraseClima = "⭕ {$clima["temperatura"]}ºC \n☁ {$clima["descricao"]} \n🕐 {$clima["periodo"]} \n🎈 Umidade: {$clima["umidade"]} \n🌀 {$clima["v_vento"]} \n📅 {$clima["dia"]} \n🕒 {$clima["horario"]}";
+		}else{
+			$fraseClima = "Não achei o Clima da cidade Digitada. \nTente Novamente.";
+		}
+		if(isset($erro)){ $fraseClima = $erro; }
 		return array("text" => $fraseClima);
 
 	}
