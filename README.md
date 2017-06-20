@@ -130,3 +130,7 @@ ___________
  - Paypal:  https://goo.gl/ujU2QU
 
 --------------------------
+
+ - WhatsApp: http://bit.ly/whatsappdopaulo
+ 
+--------------------------
