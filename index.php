@@ -25,6 +25,24 @@
 		include "views/logs.html";
 	});
 
+	Route::get('/clima/(:any)/(:any)', function($cidade, $estado){
+		$cidade = urldecode($cidade); $estado = urldecode($estado);
+		$key = "d6cab59d";
+		$res = (array) json_decode(file_get_contents("https://api.hgbrasil.com/weather/?format=json&city_name={$cidade},{$estado}&key=".$key));
+		$resultado = (array) $res["results"];
+		$data = array(
+			"temperatura" => $resultado["temp"],
+			"descricao" => $resultado["description"],
+			"periodo" => $resultado["currently"],
+			"umidade" => $resultado["humidity"],
+			"v_vento" => $resultado["wind_speedy"],
+			"dia" => $resultado["date"],
+			"horario" => $resultado["time"]
+		);
+		header("Content-Type: application/json");
+		echo json_encode($data);
+	});
+
 	Route::get('/webhook', function() {
   		
 		// VERIFICAÇAO DO FACEBOOK
