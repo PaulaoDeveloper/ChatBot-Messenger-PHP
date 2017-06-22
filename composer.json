@@ -1,9 +1,9 @@
 {
     "name": "paulaodeveloper/chatbotphp",
     "type": "library",
-    "description": "Logging for PHP 5.3",
-    "keywords": ["log","logging"],
-    "homepage": "https://github.com/Seldaek/monolog",
+    "description": "Chatbot with Facebook",
+    "keywords": ["chatbot","bot"],
+    "homepage": "https://github.com/PaulaoDeveloper/ChatBot-Messenger-PHP",
     "license": "MIT",
     "authors": [
         {
