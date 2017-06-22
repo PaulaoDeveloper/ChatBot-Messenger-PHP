@@ -1,5 +1,10 @@
 {
     "name": "paulaodeveloper/chatbotphp",
+    "type": "library",
+    "description": "Logging for PHP 5.3",
+    "keywords": ["log","logging"],
+    "homepage": "https://github.com/Seldaek/monolog",
+    "license": "MIT",
     "authors": [
         {
             "name": "Paulão Developer",
@@ -14,7 +19,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Src\\" : "src"
+            "BotSource\\" : "src/Bot"
         }
     }
 }
