@@ -1,5 +1,13 @@
 {
+    "name": "paulaodeveloper/teste",
+    "authors": [
+        {
+            "name": "Paulão Developer",
+            "email": "PaulaoDeveloper@users.noreply.github.com"
+        }
+    ],
     "require": {
+        "php": "^5.3.3 || ^7.0",
         "pusher/pusher-php-server": "^2.6",
         "guzzlehttp/guzzle": "^6.2",
         "noahbuscher/macaw": "dev-master"
