@@ -15,8 +15,10 @@
     "require": {
         "php": "^5.3.3 || ^7.0",
         "pusher/pusher-php-server": "^2.6",
-        "guzzlehttp/guzzle": "^6.2",
-        "noahbuscher/macaw": "*"
+        "guzzlehttp/guzzle": "^6.2"
+    },
+    "require-dev": {
+        "noahbuscher/macaw": "dev-master"
     },
     "autoload": {
         "psr-4": {
